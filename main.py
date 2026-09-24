@@ -1,7 +1,9 @@
 def calculation(q, ppu):
     totalAmmount = q * ppu
 
-    print(f"Item Name: {itemName}, total Ammount: {totalAmmount}, Price Per Unit: {ppu}")
+    file = open(sales_log.txt, "a")
+    file.write(f"Item Name: {itemName}, total Ammount: {totalAmmount}, Price Per Unit: {ppu}")
+
 
 def exitNa():
     exit()
@@ -26,8 +28,10 @@ while lop:
             pricePerUnit = input("Price per unit: ")
             pricePerUnit = float(pricePerUnit)
             calculation(quantitySold, pricePerUnit)
+
         except ValueError:
             print("Error! Please input proper value.")
+
 
     if u == "4":
         print("Thank you for using the Sales Record Management System.")
